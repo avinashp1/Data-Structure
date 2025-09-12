@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DataStructure": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
