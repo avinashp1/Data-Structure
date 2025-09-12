@@ -1,3 +1,13 @@
+![Diagram](diagram.png)
+
+```
+Front                Rear
+  |                   |
++---+---+---+---+---+
+| 1 | 2 | 3 | 4 | 5 |
++---+---+---+---+---+
+```
+
 Definition of Queue:
 A queue is a linear data structure that follows the First-In-First-Out (FIFO) principle.
 

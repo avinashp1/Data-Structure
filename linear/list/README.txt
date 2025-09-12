@@ -1,3 +1,12 @@
+![Diagram](diagram.png)
+
+```
++---+---+---+---+
+| a | b | c | d |
++---+---+---+---+
+ 0   1   2   3
+```
+
 Definition of List:
 A List in C# is a generic collection that can dynamically grow or shrink. It is part of the System.Collections.Generic namespace and provides methods for adding, removing, and accessing elements by index.
 

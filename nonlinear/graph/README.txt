@@ -1,3 +1,11 @@
+![Diagram](diagram.png)
+
+```
+1 -- 2
+|  / |
+3 -- 4
+```
+
 Definition of Graph:
 A graph is a non-linear data structure consisting of nodes (vertices) and edges connecting them.
 

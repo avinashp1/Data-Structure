@@ -1,3 +1,12 @@
+![Diagram](diagram.png)
+
+```
+| 3 |
+| 2 |
+| 1 |
+-----
+```
+
 Definition of Stack:
 A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle.
 

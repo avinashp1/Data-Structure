@@ -1,3 +1,12 @@
+![Diagram](diagram.png)
+
+```
++---+---+---+---+---+
+| 1 | 2 | 3 | 4 | 5 |
++---+---+---+---+---+
+ 0   1   2   3   4
+```
+
 Definition of array:
 An array is a collection of items stored at contiguous memory locations. The idea is to store multiple items of the same type together.
 
