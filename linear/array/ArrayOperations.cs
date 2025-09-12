@@ -2,9 +2,10 @@ using System;
 
 public static class ArrayOperations
 {
-    // Example method: prints all elements of an integer array
-    public static void PrintArray(int[] arr)
+    // Generic print for any array type
+    public static void PrintArray<T>(T[] arr)
     {
+        if (arr == null) throw new ArgumentNullException(nameof(arr));
         Console.WriteLine("Array elements:");
         foreach (var item in arr)
         {
@@ -13,87 +14,44 @@ public static class ArrayOperations
         Console.WriteLine();
     }
 
-    // Prints all elements of a string array
-    public static void PrintArray(string[] arr)
+    // Generic insert using Array.Copy for performance
+    public static T[] InsertElement<T>(T[] arr, T element, int index)
     {
-        Console.WriteLine("Array elements:");
-        foreach (var item in arr)
-        {
-            Console.Write(item + " ");
-        }
-        Console.WriteLine();
-    }
-
-    // Insert an element at a specific index (returns new array)
-    public static int[] InsertElement(int[] arr, int element, int index)
-    {
+        if (arr == null) throw new ArgumentNullException(nameof(arr));
         if (index < 0 || index > arr.Length)
             throw new ArgumentOutOfRangeException(nameof(index));
-        int[] newArr = new int[arr.Length + 1];
-        for (int i = 0, j = 0; i < newArr.Length; i++)
-        {
-            if (i == index)
-                newArr[i] = element;
-            else
-                newArr[i] = arr[j++];
-        }
+
+        var newArr = new T[arr.Length + 1];
+        if (index > 0)
+            Array.Copy(arr, 0, newArr, 0, index);
+        newArr[index] = element;
+        if (index < arr.Length)
+            Array.Copy(arr, index, newArr, index + 1, arr.Length - index);
         return newArr;
     }
 
-    public static string[] InsertElement(string[] arr, string element, int index)
+    // Generic remove at index
+    public static T[] RemoveElement<T>(T[] arr, int index)
     {
-        if (index < 0 || index > arr.Length)
-            throw new ArgumentOutOfRangeException(nameof(index));
-        string[] newArr = new string[arr.Length + 1];
-        for (int i = 0, j = 0; i < newArr.Length; i++)
-        {
-            if (i == index)
-                newArr[i] = element;
-            else
-                newArr[i] = arr[j++];
-        }
-        return newArr;
-    }
-
-    // Remove an element at a specific index (returns new array)
-    public static int[] RemoveElement(int[] arr, int index)
-    {
+        if (arr == null) throw new ArgumentNullException(nameof(arr));
         if (index < 0 || index >= arr.Length)
             throw new ArgumentOutOfRangeException(nameof(index));
-        int[] newArr = new int[arr.Length - 1];
-        for (int i = 0, j = 0; i < arr.Length; i++)
-        {
-            if (i == index) continue;
-            newArr[j++] = arr[i];
-        }
+
+        var newArr = new T[arr.Length - 1];
+        if (index > 0)
+            Array.Copy(arr, 0, newArr, 0, index);
+        if (index < arr.Length - 1)
+            Array.Copy(arr, index + 1, newArr, index, arr.Length - index - 1);
         return newArr;
     }
 
-    public static string[] RemoveElement(string[] arr, int index)
+    // Insert element in the middle
+    public static T[] InsertInMiddle<T>(T[] arr, T element)
     {
-        if (index < 0 || index >= arr.Length)
-            throw new ArgumentOutOfRangeException(nameof(index));
-        string[] newArr = new string[arr.Length - 1];
-        for (int i = 0, j = 0; i < arr.Length; i++)
-        {
-            if (i == index) continue;
-            newArr[j++] = arr[i];
-        }
-        return newArr;
-    }
-
-    // Insert an element in the middle (returns new array)
-    public static int[] InsertInMiddle(int[] arr, int element)
-    {
+        if (arr == null) throw new ArgumentNullException(nameof(arr));
         int mid = arr.Length / 2;
         return InsertElement(arr, element, mid);
     }
 
-    public static string[] InsertInMiddle(string[] arr, string element)
-    {
-        int mid = arr.Length / 2;
-        return InsertElement(arr, element, mid);
-    }
-
-    // Note: Arrays in C# have fixed size. All insert/remove operations return a new array.
+    // Note: Arrays in C# are fixed-size; these methods return new arrays when modifying size.
 }
