@@ -38,4 +38,16 @@ public static class ListOperations
         int mid = list.Count / 2;
         list.Insert(mid, element);
     }
+
+    public static int FindElement<T>(List<T> list, T element)
+    {
+        if (list == null) throw new ArgumentNullException(nameof(list));
+        return list.IndexOf(element);
+    }
+
+    public static void Reverse<T>(List<T> list)
+    {
+        if (list == null) throw new ArgumentNullException(nameof(list));
+        list.Reverse();
+    }
 }

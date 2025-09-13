@@ -31,4 +31,16 @@ public static class QueueOperations
             Console.Write(item + " ");
         Console.WriteLine();
     }
+
+    public static bool Contains<T>(Queue<T> queue, T element)
+    {
+        if (queue == null) throw new ArgumentNullException(nameof(queue));
+        return queue.Contains(element);
+    }
+
+    public static void Clear<T>(Queue<T> queue)
+    {
+        if (queue == null) throw new ArgumentNullException(nameof(queue));
+        queue.Clear();
+    }
 }

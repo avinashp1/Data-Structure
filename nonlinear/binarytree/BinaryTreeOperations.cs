@@ -48,4 +48,17 @@ public static class BinaryTreeOperations
             if (n.Right != null) q.Enqueue(n.Right);
         }
     }
+
+    public static bool Find<T>(TreeNode<T> node, T value)
+    {
+        if (node == null) return false;
+        if (EqualityComparer<T>.Default.Equals(node.Value, value)) return true;
+        return Find(node.Left, value) || Find(node.Right, value);
+    }
+
+    public static int Height<T>(TreeNode<T> node)
+    {
+        if (node == null) return 0;
+        return 1 + Math.Max(Height(node.Left), Height(node.Right));
+    }
 }

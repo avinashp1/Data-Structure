@@ -17,3 +17,8 @@ Advantages:
 Disadvantages:
 - Limited access (only top element accessible).
 - Not suitable for searching or random access.
+
+**Real-life examples:**
+- Undo/redo functionality in applications.
+- Expression evaluation and syntax parsing in compilers.
+- Navigating browser history (back/forward)

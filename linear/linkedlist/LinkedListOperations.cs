@@ -13,4 +13,19 @@ public static class LinkedListOperations
             Console.Write(item + " ");
         Console.WriteLine();
     }
+
+    public static bool FindElement<T>(LinkedList<T> list, T element)
+    {
+        if (list == null) throw new ArgumentNullException(nameof(list));
+        return list.Contains(element);
+    }
+
+    public static void Reverse<T>(LinkedList<T> list)
+    {
+        if (list == null) throw new ArgumentNullException(nameof(list));
+        var arr = new List<T>(list);
+        list.Clear();
+        for (int i = arr.Count - 1; i >= 0; i--)
+            list.AddLast(arr[i]);
+    }
 }

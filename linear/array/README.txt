@@ -19,3 +19,8 @@ Disadvantages:
 - Fixed size (cannot grow/shrink in place).
 - Inserting or removing elements (except at the end) requires shifting elements (O(n)).
 - Wastes memory if sized too large or requires reallocation if growth needed.
+
+**Real-life examples:**
+- Storing monthly sales data for a year (fixed size, fast access).
+- Representing a chessboard or game board.
+- Buffering audio or video frames in media applications

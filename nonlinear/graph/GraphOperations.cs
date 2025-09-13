@@ -64,4 +64,14 @@ public class Graph
             Console.WriteLine();
         }
     }
+
+    public bool HasEdge(int u, int v)
+    {
+        return AdjacencyList.ContainsKey(u) && AdjacencyList[u].Contains(v);
+    }
+
+    public int VertexCount()
+    {
+        return AdjacencyList.Count;
+    }
 }

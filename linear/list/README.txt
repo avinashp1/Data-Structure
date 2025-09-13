@@ -20,3 +20,8 @@ Disadvantages:
 - Insertions/removals (except at the end) require shifting elements (O(n)).
 - Slightly more memory overhead compared to arrays.
 - Not thread-safe by default.
+
+**Real-life examples:**
+- Managing a shopping cart in an e-commerce application.
+- Keeping a dynamic list of search results.
+- Storing undo/redo history in a text editor

@@ -31,4 +31,16 @@ public static class StackOperations
             Console.Write(item + " ");
         Console.WriteLine();
     }
+
+    public static bool Contains<T>(Stack<T> stack, T element)
+    {
+        if (stack == null) throw new ArgumentNullException(nameof(stack));
+        return stack.Contains(element);
+    }
+
+    public static void Clear<T>(Stack<T> stack)
+    {
+        if (stack == null) throw new ArgumentNullException(nameof(stack));
+        stack.Clear();
+    }
 }

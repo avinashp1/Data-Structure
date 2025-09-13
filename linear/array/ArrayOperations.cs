@@ -53,5 +53,21 @@ public static class ArrayOperations
         return InsertElement(arr, element, mid);
     }
 
+    // Find element index
+    public static int FindElement<T>(T[] arr, T element)
+    {
+        if (arr == null) throw new ArgumentNullException(nameof(arr));
+        return Array.IndexOf(arr, element);
+    }
+
+    // Reverse array
+    public static T[] Reverse<T>(T[] arr)
+    {
+        if (arr == null) throw new ArgumentNullException(nameof(arr));
+        var newArr = (T[])arr.Clone();
+        Array.Reverse(newArr);
+        return newArr;
+    }
+
     // Note: Arrays in C# are fixed-size; these methods return new arrays when modifying size.
 }
